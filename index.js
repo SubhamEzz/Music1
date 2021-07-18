@@ -1,8 +1,17 @@
 for(var i=0;i<document.querySelectorAll(".drum").length;i++){
 document.querySelectorAll("button")[i].addEventListener("click",function(){
   var btn = this.innerHTML;
-  console.log(btn);
-  switch(btn){
+  playSound(btn);
+  btnAnimation(btn);
+
+});
+document.addEventListener("keydown",function(event){
+  playSound(event.key);
+  btnAnimation(event.key);
+});
+}
+function playSound(key){
+  switch(key){
     case 'w' :   var audio = new Audio('sounds/tom-1.mp3');
                audio.play();
                break;
@@ -25,7 +34,12 @@ document.querySelectorAll("button")[i].addEventListener("click",function(){
                  audio.play();
                  break;
   }
-});
 }
-// var audio = new Audio('sounds/crash.mp3');
-// audio.play();
+
+function btnAnimation(key){
+ var mainKey= document.querySelector("."+key);
+ mainKey.classList.add("pressed");
+ setTimeout(function () {
+   mainKey.classList.remove("pressed");
+ }, 100);
+}

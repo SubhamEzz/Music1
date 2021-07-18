@@ -10,6 +10,12 @@ h1 {
   text-shadow: 4px 0 #0061A8;
 
 }
+h3{
+  font-size: 1.5rem;
+  color: #D8E3E7;
+  font-family: "Arvo", cursive;
+  text-shadow: 4px 0 #0061A8;
+}
 
 footer {
   color: #D8E3E7;
@@ -46,7 +52,7 @@ background-image: url("images/kick.png");
 }
 
 .set {
-  margin: 10% auto;
+  margin: 5% auto;
 }
 
 .game-over {
